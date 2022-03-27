@@ -20,7 +20,7 @@
             class="absolute w-6 h-6 translate-y-1/3" 
           >
             <div 
-              class="w-full h-full rounded-full box-border"
+              class="w-full h-full rounded-full box-border bg-purple-800"
               :class="[bgTheme]"
             >
             </div>
@@ -30,7 +30,7 @@
             class="flex -mt-8"
           >
               <span
-                class="px-4 py-2 rounded-lg text-white -translate-y-3"
+                class="px-4 py-2 rounded-lg text-white -translate-y-3 bg-purple-800"
                 :class="[bgTheme]"
               >
                 {{ val }}
@@ -40,7 +40,7 @@
         </div>
       <div
         ref="process"
-        class="absolute h-full rounded transition-all duration-75 z-[1] top-0 left-0"
+        class="absolute h-full rounded transition-all duration-75 z-[1] top-0 left-0 bg-purple-300"
         :class="[bgProcessThmee]"
         style="will-change: width;"
       />
