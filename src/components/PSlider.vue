@@ -6,7 +6,7 @@
     @click="wrapClick">
     <div
       ref="elem"
-      class="relative block h-2 rounded bg-slate-200 cursor-pointer"
+      class="relative block h-2 rounded bg-slate-200 cursor-pointer text-white hover:opacity-80 focus:opacity-80"
     >
         <div class="absolute -top-4 z-10 cursor-pointer">
           <div
@@ -20,8 +20,8 @@
             class="absolute w-6 h-6 translate-y-1/3" 
           >
             <div 
-              class="w-full h-full rounded-full box-border bg-purple-800"
-              :class="[bgTheme]"
+              class="w-full h-full rounded-full box-border"
+              :class="[bgTheme[theme]]"
             >
             </div>
           </div>
@@ -30,8 +30,8 @@
             class="flex -mt-8"
           >
               <span
-                class="px-4 py-2 rounded-lg text-white -translate-y-3 bg-purple-800"
-                :class="[bgTheme]"
+                class="px-4 py-2 rounded-lg -translate-y-3"
+                :class="[bgTheme[theme]]"
               >
                 {{ val }}
               </span>
@@ -40,8 +40,8 @@
         </div>
       <div
         ref="process"
-        class="absolute h-full rounded transition-all duration-75 z-[1] top-0 left-0 bg-purple-300"
-        :class="[bgProcessThmee]"
+        class="absolute h-full rounded transition-all duration-75 z-[1] top-0 left-0"
+        :class="[bgProcessThmee[theme]]"
         style="will-change: width;"
       />
     </div>
@@ -59,7 +59,21 @@ export default {
       currentSlider: 0,
       interval: 1,
       lazy: false,
-      realTime: false
+      realTime: false,
+      bgTheme: {
+        purple: 'bg-purple-800',
+        amber: 'bg-amber-800',
+        rose: 'bg-rose-800',
+        green: 'bg-green-800',
+        neutral: 'bg-neutral-800',
+      },
+      bgProcessThmee: {
+        purple: 'bg-purple-300',
+        amber: 'bg-amber-300',
+        rose: 'bg-rose-300',
+        green: 'bg-green-300',
+        neutral: 'bg-neutral-300',
+      }
     }
   },
   props: {
@@ -115,12 +129,6 @@ export default {
       set (val) {
         this.currentValue = val
       }
-    },
-    bgTheme() {
-      return 'bg-' + this.theme + '-800';
-    },
-    bgProcessThmee() {
-      return 'bg-' + this.theme + '-300';
     },
     currentIndex () {
       return (this.currentValue - this.minimum) / this.spacing

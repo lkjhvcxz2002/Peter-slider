@@ -8,7 +8,7 @@ export default {
   argTypes: {
     theme: {
       control: { type: 'select' },
-      options: ['purple', 'amber', 'rose', 'green'],
+      options: ['purple', 'amber', 'rose', 'green', 'neutral'],
     },
   },
 };
