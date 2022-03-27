@@ -37,6 +37,5 @@ Props | Type | Default | Description |
 | Name          | Description  |
 | --------------|--------------|
 | input | triggered on value change |
-| callbackRange | triggered on range value change |
 | dragStart | triggered on start drag |
 | dragEnd | triggered on stop drag |
