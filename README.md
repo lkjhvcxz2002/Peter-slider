@@ -1,24 +1,42 @@
-# vue-slider
+# Peter-slider
 
 ## Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Run Project
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+npm run storybook
 ```
 
-### Lints and fixes files
+## Usage
 ```
-npm run lint
+// main.js
+import Vue from 'vue'
+import PSlider from './src/components/PSlider.vue'
+
+Vue.component('PSlider', PSlider)
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Options
+### Props
+Props | Type | Default | Description |
+---|---|---|---|
+| v-model       | Number,String  | 0        | Initial value (v-model)|
+| min         | Number        | 0        | Minimum value   |
+| max         | Number        | 100      | Maximum value   |
+| is-disabled       | Boolean        | false      | Flag for disable slider bar |
+| draggable      | Boolean       | true     | Flag for active/disable draggable |
+| show-cursor      | Boolean       | true     | Flag display cursor |
+| show-tooltip      | Boolean       | true     | Flag display tooltip |
+| speed       | Number        | 0.5      | Transition time |
+| theme       | String        | purple      | Custom color theme, ex: purple, rose |
+
+### Events
+| Name          | Description  |
+| --------------|--------------|
+| input | triggered on value change |
+| callbackRange | triggered on range value change |
+| dragStart | triggered on start drag |
+| dragEnd | triggered on stop drag |
